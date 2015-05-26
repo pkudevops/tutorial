@@ -183,7 +183,7 @@ docker stop $(docker ps -a -q)
 - cleandocker
 - rundocker
 
-## cleandocker
+## job "cleandocker"
 
 ```
 containers=$(docker ps -a -q | wc -l)
@@ -200,7 +200,7 @@ if [ $img ]; then
 fi
 ```
 
-## rundocker
+## job "rundocker"
 
 ```
 mv target/spring-petclinic-1.0.0-SNAPSHOT.war target/petclinic.war
