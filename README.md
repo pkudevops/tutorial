@@ -209,7 +209,7 @@ echo "FROM tomcat" > Dockerfile
 echo "COPY target/petclinic.war /usr/local/tomcat/webapps/" >> Dockerfile
 
 docker build -t petclinic .
-docker run -p 80:8080 -d perclinic
+docker run -p 80:8080 -d petclinic
 ```
 
 ## 使用docker-compose构建多组件应用
