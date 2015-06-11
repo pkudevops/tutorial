@@ -244,3 +244,34 @@ MYSQL_DATABASE=petclinic
 MYSQL_USER=user
 MYSQL_PASSWORD=passw0rd
 ```
+
+data-access.properties (MySQL)
+
+```bash
+# Properties file with JDBC and JPA settings.
+#
+# Applied by <context:property-placeholder location="jdbc.properties"/> from
+# various application context XML files (e.g., "applicationContext-*.xml").
+# Targeted at system administrators, to avoid touching the context XML files.
+
+#-------------------------------------------------------------------------------
+# MySQL Settings
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://mysql:3306/petclinic
+jdbc.username=user
+jdbc.password=passw0rd
+
+# Properties that control the population of schema and data for a new data source
+jdbc.initLocation=classpath:db/mysql/initDB.sql
+jdbc.dataLocation=classpath:db/mysql/populateDB.sql
+
+# Property that determines which Hibernate dialect to use
+# (only applied with "applicationContext-hibernate.xml")
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# Property that determines which database to use with an AbstractJpaVendorAdapter
+jpa.database=MYSQL
+
+jpa.showSql=true
+```
